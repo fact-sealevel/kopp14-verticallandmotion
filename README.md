@@ -11,9 +11,13 @@ This module implements the Kopp et al. (2014) long-term background contribution 
 Clone the repository and create directories to hold input and output data. 
 
 ```shell
-git clone git@github.com:fact-sealevel/kopp14-vlm.git
+#git clone git@github.com:fact-sealevel/kopp14-vlm.git
+#^eventually, for now :
+git clone --single-branch --branch package git@github.com:e-marshall/kopp14-vlm.git
+```
 
 # Input data we will pass to the container
+```
 mkdir -p ./data/input
 curl -sL https://zenodo.org/record/7478192/files/kopp14_verticallandmotion_preprocess_data.tgz | tar -zx -C ./data/input
 echo "New_York	12	40.70	-74.01" > ./data/input/location.lst
@@ -24,11 +28,9 @@ mkdir -p ./data/output
 
 Next, run the container associated with this package. For example: 
 ```shell
-docker build -t kopp14-vlm .
-
 docker run --rm \
--v $HOME/Desktop/facts_work/facts_v2/kopp14-vlm/data/input:/mnt/kopp14vlm_data_in:ro \
--v $HOME/Desktop/facts_work/facts_v2/kopp14-vlm/data/output:/mnt/kopp14vlm_data_out \
+-v /path/to/kopp14-vlm/data/input:/mnt/kopp14vlm_data_in:ro \
+-v /path/to/kopp14-vlm/data/output:/mnt/kopp14vlm_data_out \
 kopp14-vlm \
 --pipeline-id MY_PIPELINE_ID \
 --rate-file /mnt/kopp14vlm_data_in/bkgdrate-210306.tsv \

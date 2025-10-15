@@ -98,7 +98,7 @@ wheels = [
 ]
 
 [[package]]
-name = "kopp14-vlm"
+name = "kopp14-verticallandmotion"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

@@ -1,4 +1,4 @@
-# kopp14-vlm
+# kopp14-verticallandmotion
 This module implements the Kopp et al. (2014) long-term background contribution methodology, as employed in IPCC AR6. It includes long-term (centennial-scale) contributions from vertical land motion and other background process (e.g., geoid effects of glacial isostatic adjustment). See iPCC AR6 WG1 9.6.3.2.9.
 
 >[!CAUTION]
@@ -11,9 +11,9 @@ This module implements the Kopp et al. (2014) long-term background contribution 
 Clone the repository and create directories to hold input and output data. 
 
 ```shell
-#git clone git@github.com:fact-sealevel/kopp14-vlm.git
+#git clone git@github.com:fact-sealevel/kopp14-verticallandmotion.git
 #^eventually, for now :
-git clone --single-branch --branch package git@github.com:e-marshall/kopp14-vlm.git
+git clone --single-branch --branch package git@github.com:e-marshall/kopp14-verticallandmotion.git
 ```
 
 Input data we will pass to the container
@@ -29,18 +29,18 @@ mkdir -p ./data/output
 Next, run the container associated with this package. For example: 
 ```shell
 docker run --rm \
--v /path/to/kopp14-vlm/data/input:/mnt/kopp14vlm_data_in:ro \
--v /path/to/kopp14-vlm/data/output:/mnt/kopp14vlm_data_out \
-kopp14-vlm \
+-v /path/to/kopp14-verticallandmotion/data/input:/mnt/kopp14verticallandmotion_data_in:ro \
+-v /path/to/kopp14-verticallandmotion/data/output:/mnt/kopp14verticallandmotion_data_out \
+kopp14-verticallandmotion \
 --pipeline-id MY_PIPELINE_ID \
---rate-file /mnt/kopp14vlm_data_in/bkgdrate-210306.tsv \
---location-file /mnt/kopp14vlm_data_in/location.lst \
---output-lslr-file /mnt/kopp14vlm_data_out/localsl.nc
+--rate-file /mnt/kopp14verticallandmotion_data_in/bkgdrate-210306.tsv \
+--location-file /mnt/kopp14verticallandmotion_data_in/location.lst \
+--output-lslr-file /mnt/kopp14verticallandmotion_data_out/localsl.nc
 ``` 
 
 ## Features
 ```shell
-Usage: kopp14-vlm [OPTIONS]
+Usage: kopp14-verticallandmotion [OPTIONS]
 
 Options:
   --pipeline-id TEXT           Unique identifier for the pipeline  [required]
@@ -66,7 +66,7 @@ Options:
 See this help documentation by passing the `--help` flag when running the application, for example: 
 
 ```shell
-docker run --rm kopp14-vlm --help
+docker run --rm kopp14-verticallandmotion --help
 ```   
 
 ## Results
@@ -76,11 +76,11 @@ If this module runs successfully, one netCDF file containing local sea level cha
 You can build the container with Docker by cloning the repository locally and then running the following command from the repository root:
 
 ```shell
-docker build -t kopp14-vlm .
+docker build -t kopp14-verticallandmotion .
 ```
 
 ## Support
 
-Source code is available online at https://github.com/facts-org/kopp14-vlm. This software is open source, available under the MIT license.
+Source code is available online at https://github.com/facts-org/kopp14-verticallandmotion. This software is open source, available under the MIT license.
 
-Please file issues in the issue tracker at https://github.com/facts-org/kopp14-vlm/issues.
+Please file issues in the issue tracker at https://github.com/facts-org/kopp14-verticallandmotion/issues.

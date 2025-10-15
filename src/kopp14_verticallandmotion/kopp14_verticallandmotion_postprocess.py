@@ -3,7 +3,7 @@ import numpy as np
 import time
 import argparse
 from scipy.stats import norm
-from kopp14_vlm.read_locationfile import ReadLocationFile
+from kopp14_verticallandmotion.read_locationfile import ReadLocationFile
 
 import xarray as xr
 import dask.array as da

@@ -1,7 +1,7 @@
-from kopp14_vlm.kopp14_verticallandmotion_preprocess import (
+from kopp14_verticallandmotion.kopp14_verticallandmotion_preprocess import (
     kopp14_preprocess_verticallandmotion,
 )
-from kopp14_vlm.kopp14_verticallandmotion_postprocess import (
+from kopp14_verticallandmotion.kopp14_verticallandmotion_postprocess import (
     kopp14_postprocess_verticallandmotion,
 )
 
@@ -100,7 +100,7 @@ def main(
     output_lslr_file,
 ):
     """ """
-    click.echo("Hello from Kopp14-vlm!")
+    click.echo("Hello from Kopp14-verticallandmotion!")
 
     preprocess_dict = kopp14_preprocess_verticallandmotion(pipeline_id, rate_file)
     

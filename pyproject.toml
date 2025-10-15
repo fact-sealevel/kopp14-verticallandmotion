@@ -1,7 +1,7 @@
 [project]
-name = "kopp14-vlm"
+name = "kopp14-verticallandmotion"
 version = "0.1.0"
-description = "Add your description here"
+description = "This is a containerized application of the FACTS module that implements the Kopp et al. (2014) long-term background contribution methodology, as employed in IPCC AR6."
 readme = "README.md"
 authors = [
     { name = "Emma Marshall", email = "emarshall@rhg.com" }
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-kopp14-vlm = "kopp14_vlm.cli:main"
+kopp14-verticallandmotion = "kopp14_verticallandmotion.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]

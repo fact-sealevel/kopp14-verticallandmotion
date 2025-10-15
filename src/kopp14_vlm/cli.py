@@ -16,7 +16,6 @@ import click
     "--rate-file",
     required=True,
     type=str,
-    #default="./data/input/bkgdrate-210306.tsv",
     help="Path to the input rate file",
 )
 @click.option(
@@ -71,7 +70,6 @@ import click
     "--location-file",
     required=True,
     type=str,
-    #default="./data/input/location.lst",
     help="File that contains name, id, lat, and lon of points for localization",
 )
 @click.option(
@@ -86,7 +84,6 @@ import click
     "--output-lslr-file",
     required=False,
     type=str,
-    #default="./data/output/localsl.nc",
     help="Path to the output local SLR netCDF file",
 )
 def main(

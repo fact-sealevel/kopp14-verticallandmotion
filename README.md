@@ -77,7 +77,6 @@ You can build the container with Docker by cloning the repository locally and th
 
 ```shell
 docker build -t kopp14-vlm .
-
 ```
 
 ## Support

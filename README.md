@@ -25,11 +25,44 @@ mkdir -p ./data/output
 ```
 
 Next, run the container associated with this package. For example: 
+```shell
+docker build -t kopp14-vlm .
 
-TODO 
+docker run --rm \
+-v $HOME/Desktop/facts_work/facts_v2/kopp14-vlm/data/input:/mnt/kopp14vlm_data_in:ro \
+-v $HOME/Desktop/facts_work/facts_v2/kopp14-vlm/data/output:/mnt/kopp14vlm_data_out \
+kopp14-vlm \
+--pipeline-id MY_PIPELINE_ID \
+--rate-file /mnt/kopp14vlm_data_in/bkgdrate-210306.tsv \
+--location-file /mnt/kopp14vlm_data_in/location.lst \
+--output-lslr-file /mnt/kopp14vlm_data_out/localsl.nc
+``` 
 
 ## Features
+```shell
+Usage: kopp14-vlm [OPTIONS]
 
+Options:
+  --pipeline-id TEXT           Unique identifier for the pipeline  [required]
+  --rate-file TEXT             Path to the input rate file  [required]
+  --nsamps INTEGER             Number of samples to generate  [default: 500]
+  --rng-seed INTEGER           Seed value for random number generator
+                               [default: 1234]
+  --baseyear INTEGER RANGE     Base or referecne year for projections
+                               [default: 2000; 2000<=x<=2300]
+  --pyear-start INTEGER RANGE  Year for which projections start  [default:
+                               2000; 2000<=x<=2300]
+  --pyear-end INTEGER          Year for which projections end  [default: 2100]
+  --pyear-step INTEGER RANGE   Step size in years between pyear_start and
+                               pyear_end at which projections are produced
+                               [default: 10; x>=1]
+  --location-file TEXT         File that contains name, id, lat, and lon of
+                               points for localization  [required]
+  --chunk-size INTEGER         Number of locations to process at a time
+                               [default: 50]
+  --output-lslr-file TEXT      Path to the output local SLR netCDF file
+  --help                       Show this message and exit.
+```
 See this help documentation by passing the `--help` flag when running the application, for example: 
 
 ```shell
@@ -37,7 +70,7 @@ docker run --rm kopp14-vlm --help
 ```   
 
 ## Results
-TODO
+If this module runs successfully, one netCDF file containing local sea level change projections will be written to `./data/output`.
 
 ## Build the container locally
 You can build the container with Docker by cloning the repository locally and then running the following command from the repository root:

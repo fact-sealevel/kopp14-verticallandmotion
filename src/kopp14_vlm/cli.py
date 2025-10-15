@@ -16,7 +16,7 @@ import click
     "--rate-file",
     required=True,
     type=str,
-    default="./data/input/bkgdrate-210306.tsv",
+    #default="./data/input/bkgdrate-210306.tsv",
     help="Path to the input rate file",
 )
 @click.option(
@@ -71,7 +71,7 @@ import click
     "--location-file",
     required=True,
     type=str,
-    default="./data/input/location.lst",
+    #default="./data/input/location.lst",
     help="File that contains name, id, lat, and lon of points for localization",
 )
 @click.option(
@@ -83,10 +83,10 @@ import click
     show_default=True,
 )
 @click.option(
-    "--output_lslr_file",
+    "--output-lslr-file",
     required=False,
     type=str,
-    default="./data/output/localsl.nc",
+    #default="./data/output/localsl.nc",
     help="Path to the output local SLR netCDF file",
 )
 def main(
@@ -106,11 +106,7 @@ def main(
     click.echo("Hello from Kopp14-vlm!")
 
     preprocess_dict = kopp14_preprocess_verticallandmotion(pipeline_id, rate_file)
-    preprocess_message = (
-        f"Preprocess complete. Keys are: {list(preprocess_dict.keys())}"
-    )
-    click.echo(preprocess_message)
-
+    
     kopp14_postprocess_verticallandmotion(
         preprocess_dict=preprocess_dict,
         nsamps=nsamps,

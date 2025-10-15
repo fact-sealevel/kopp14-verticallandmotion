@@ -16,7 +16,7 @@ Clone the repository and create directories to hold input and output data.
 git clone --single-branch --branch package git@github.com:e-marshall/kopp14-vlm.git
 ```
 
-# Input data we will pass to the container
+Input data we will pass to the container
 ```
 mkdir -p ./data/input
 curl -sL https://zenodo.org/record/7478192/files/kopp14_verticallandmotion_preprocess_data.tgz | tar -zx -C ./data/input

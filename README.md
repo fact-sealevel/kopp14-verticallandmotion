@@ -81,6 +81,6 @@ docker build -t kopp14-verticallandmotion .
 
 ## Support
 
-Source code is available online at https://github.com/facts-org/kopp14-verticallandmotion. This software is open source, available under the MIT license.
+Source code is available online at https://github.com/fact-sealevel/kopp14-verticallandmotion. This software is open source, available under the MIT license.
 
-Please file issues in the issue tracker at https://github.com/facts-org/kopp14-verticallandmotion/issues.
+Please file issues in the issue tracker at https://github.com/fact-sealevel/kopp14-verticallandmotion/issues.

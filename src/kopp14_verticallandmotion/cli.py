@@ -103,7 +103,7 @@ def main(
     click.echo("Hello from Kopp14-verticallandmotion!")
 
     preprocess_dict = kopp14_preprocess_verticallandmotion(pipeline_id, rate_file)
-    
+
     kopp14_postprocess_verticallandmotion(
         preprocess_dict=preprocess_dict,
         nsamps=nsamps,

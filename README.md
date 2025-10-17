@@ -11,9 +11,7 @@ This module implements the Kopp et al. (2014) long-term background contribution 
 Clone the repository and create directories to hold input and output data. 
 
 ```shell
-#git clone git@github.com:fact-sealevel/kopp14-verticallandmotion.git
-#^eventually, for now :
-git clone --single-branch --branch package git@github.com:e-marshall/kopp14-verticallandmotion.git
+git clone git@github.com:fact-sealevel/kopp14-verticallandmotion.git
 ```
 
 Input data we will pass to the container
@@ -31,7 +29,7 @@ Next, run the container associated with this package. For example:
 docker run --rm \
 -v /path/to/kopp14-verticallandmotion/data/input:/mnt/kopp14verticallandmotion_data_in:ro \
 -v /path/to/kopp14-verticallandmotion/data/output:/mnt/kopp14verticallandmotion_data_out \
-kopp14-verticallandmotion \
+ghcr.io/fact-sealevel/kopp14-verticallandmotion:edge \
 --pipeline-id MY_PIPELINE_ID \
 --rate-file /mnt/kopp14verticallandmotion_data_in/bkgdrate-210306.tsv \
 --location-file /mnt/kopp14verticallandmotion_data_in/location.lst \

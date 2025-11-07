@@ -29,7 +29,7 @@ Next, run the container associated with this package. For example:
 docker run --rm \
 -v /path/to/kopp14-verticallandmotion/data/input:/mnt/kopp14verticallandmotion_data_in:ro \
 -v /path/to/kopp14-verticallandmotion/data/output:/mnt/kopp14verticallandmotion_data_out \
-ghcr.io/fact-sealevel/kopp14-verticallandmotion:edge \
+ghcr.io/fact-sealevel/kopp14-verticallandmotion:v0.1.0 \
 --pipeline-id MY_PIPELINE_ID \
 --rate-file /mnt/kopp14verticallandmotion_data_in/bkgdrate-210306.tsv \
 --location-file /mnt/kopp14verticallandmotion_data_in/location.lst \

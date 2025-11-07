@@ -10,5 +10,4 @@ The format is based on[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), 
 - Add CI/CD to build container ([PR 3](https://github.com/fact-sealevel/kopp14-verticallandmotion/pull/3) and [PR 4](https://github.com/fact-sealevel/kopp14-verticallandmotion/pull/4))
 
 
-## [Unreleased]
 

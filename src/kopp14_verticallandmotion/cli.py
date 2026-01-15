@@ -6,6 +6,10 @@ from kopp14_verticallandmotion.kopp14_verticallandmotion_postprocess import (
 )
 
 import click
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 
 @click.command()
@@ -38,8 +42,8 @@ import click
     "--baseyear",
     required=False,
     type=click.IntRange(min=2000, max=2300),
-    default=2000,
-    help="Base or referecne year for projections",
+    default=2000,  # can this be 2005? was 2000. its 2000 in f1 module default but global 2005 in f1 experiment config
+    help="Base or reference year for projections",
     show_default=True,
 )
 @click.option(
@@ -86,6 +90,11 @@ import click
     type=str,
     help="Path to the output local SLR netCDF file",
 )
+@click.option(
+    "--debug/--no-debug",
+    default=False,
+    envvar="KOPP14_VLM_DEBUG",
+)
 def main(
     pipeline_id,
     rate_file,
@@ -98,12 +107,20 @@ def main(
     location_file,
     chunk_size,
     output_lslr_file,
+    debug,
 ):
     """ """
     click.echo("Hello from Kopp14-verticallandmotion!")
+    if debug:
+        logging.root.setLevel(logging.DEBUG)
+    else:
+        logging.root.setLevel(logging.INFO)
 
+    logger.info("Starting preprocessing step...")
     preprocess_dict = kopp14_preprocess_verticallandmotion(pipeline_id, rate_file)
+    logger.info("Finished preprocessing step")
 
+    logger.info("Starting postprocessing step...")
     kopp14_postprocess_verticallandmotion(
         preprocess_dict=preprocess_dict,
         nsamps=nsamps,
@@ -117,3 +134,4 @@ def main(
         pipeline_id=pipeline_id,
         output_lslr_file=output_lslr_file,
     )
+    logger.info("Finished postprocessing step")

@@ -1,6 +1,6 @@
 [project]
 name = "kopp14-verticallandmotion"
-version = "0.1.0"
+version = "0.2.0"
 description = "This is a containerized application of the FACTS module that implements the Kopp et al. (2014) long-term background contribution methodology, as employed in IPCC AR6."
 readme = "README.md"
 authors = [
